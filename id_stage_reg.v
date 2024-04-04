@@ -56,38 +56,101 @@ if(!rst_n) begin
 	o_Extend_2 <= 32'b0;
 end
 
-else if(clk && i_FlushE) begin
-	o_PCSrcE <= 0;
-	o_RegWriteE <= 0;
-	o_MemtoRegE <= 0;
-	o_MemWriteE <= 0;
-	o_ALUControlE <= 2'b000;
-	o_BranchE <= 0;
-	o_ALUSrcE <= 0;
-	o_FlagWriteE <= 0;
-	o_CondE <= 4'b0;
-	o_FlagsE <= 4'b0;
-	o_Rd <= o_Rd;
+else if(clk && i_Flush1E) begin
+	o_PCSrc1E <= 0;
+	o_RegWrite1E <= 0;
+	o_MemtoReg1E <= 0;
+	o_MemWrite1E <= 0;
+	o_ALUControl1E <= 2'b00;
+	o_Branch1E <= 0;
+	o_ALUSrc1E <= 0;
+	o_FlagWrite1E <= 0;
+	o_Cond1E <= 4'b0;
+	o_Flags1E <= 4'b0;
+	o_Rd1 <= 4'b0;
 	o_RD1 <= 32'b0;
 	o_RD2 <= 32'b0;
-	o_Extend <= 32'b0;
+	o_Extend_1 <= 32'b0;
+
+	o_PCSrc2E <= i_PCSrc2D;
+	o_RegWrite2E <= i_RegWrite2D;
+	o_MemtoReg2E <= i_MemtoReg2D;
+	o_MemWrite2E <= i_MemWrite2D;
+	o_ALUControl2E <= i_ALUControl2D;
+	o_Branch2E <= i_Branch2D;
+	o_ALUSrc2E <= i_ALUSrc2D;
+	o_FlagWrite2E <= i_FlagWrite2D;
+	o_Cond2E <= i_Cond2;
+	o_Flags2E <= i_Flags2;
+	o_Rd2 <= i_Rd2;
+	o_RD3 <= i_RD3;
+	o_RD4 <= i_RD4;
+	o_Extend_2 <= i_Extend_2;
+end
+
+else if(clk && i_Flush2E) begin
+
+	o_PCSrc1E <= i_PCSrc1D;
+	o_RegWrite1E <= i_RegWrite1D;
+	o_MemtoReg1E <= i_MemtoReg1D;
+	o_MemWrite1E <= i_MemWrite1D;
+	o_ALUControl1E <= i_ALUControl1D;
+	o_Branch1E <= i_Branch1D;
+	o_ALUSrc1E <= i_ALUSrc1D;
+	o_FlagWrite1E <= i_FlagWrite1D;
+	o_Cond1E <= i_Cond1;
+	o_Flags1E <= i_Flags1;
+	o_Rd1 <= i_Rd1;
+	o_RD1 <= i_RD1;
+	o_RD2 <= i_RD2;
+	o_Extend_1 <= i_Extend_1;
+
+	o_PCSrc2E <= 0;
+	o_RegWrite2E <= 0;
+	o_MemtoReg2E <= 0;
+	o_MemWrite2E <= 0;
+	o_ALUControl2E <= 2'b00;
+	o_Branch2E <= 0;
+	o_ALUSrc2E <= 0;
+	o_FlagWrite2E <= 0;
+	o_Cond2E <= 4'b0;
+	o_Flags2E <= 4'b0;
+	o_Rd2 <= 4'b0;
+	o_RD3 <= 32'b0;
+	o_RD4 <= 32'b0;
+	o_Extend_2 <= 32'b0;
 end
 
 else begin
-	o_PCSrcE <= i_PCSrcD;
-	o_RegWriteE <= i_RegWriteD;
-	o_MemtoRegE <= i_MemtoRegD;
-	o_MemWriteE <= i_MemWriteD;
-	o_ALUControlE <= i_ALUControlD;
-	o_BranchE <= i_BranchD;
-	o_ALUSrcE <= i_ALUSrcD;
-	o_FlagWriteE <= i_FlagWriteD;
-	o_CondE <= i_Cond;
-	o_FlagsE <= i_Flags;
-	o_Rd <= i_Rd;
+	o_PCSrc1E <= i_PCSrc1D;
+	o_RegWrite1E <= i_RegWrite1D;
+	o_MemtoReg1E <= i_MemtoReg1D;
+	o_MemWrite1E <= i_MemWrite1D;
+	o_ALUControl1E <= i_ALUControl1D;
+	o_Branch1E <= i_Branch1D;
+	o_ALUSrc1E <= i_ALUSrc1D;
+	o_FlagWrite1E <= i_FlagWrite1D;
+	o_Cond1E <= i_Cond1;
+	o_Flags1E <= i_Flags1;
+	o_Rd1 <= i_Rd1;
 	o_RD1 <= i_RD1;
 	o_RD2 <= i_RD2;
-	o_Extend <= i_Extend;
+	o_Extend_1 <= i_Extend_1;
+
+	o_PCSrc2E <= i_PCSrc2D;
+	o_RegWrite2E <= i_RegWrite2D;
+	o_MemtoReg2E <= i_MemtoReg2D;
+	o_MemWrite2E <= i_MemWrite2D;
+	o_ALUControl2E <= i_ALUControl2D;
+	o_Branch2E <= i_Branch2D;
+	o_ALUSrc2E <= i_ALUSrc2D;
+	o_FlagWrite2E <= i_FlagWrite2D;
+	o_Cond2E <= i_Cond2;
+	o_Flags2E <= i_Flags2;
+	o_Rd2 <= i_Rd2;
+	o_RD3 <= i_RD3;
+	o_RD4 <= i_RD4;
+	o_Extend_2 <= i_Extend_2;
 end
 end
 
